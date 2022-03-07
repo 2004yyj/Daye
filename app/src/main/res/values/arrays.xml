@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabArray">
+        <item>추천</item>
+        <item>전체</item>
+        <item>녹차</item>
+        <item>백차</item>
+        <item>황차</item>
+        <item>우롱차</item>
+        <item>홍차</item>
+        <item>흑차</item>
+    </string-array>
+</resources>

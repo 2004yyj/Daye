@@ -72,6 +72,7 @@ fun MainTopAppBar() {
     TopAppBar(
         title = {},
         modifier = Modifier,
+        elevation = 0.dp,
         backgroundColor = Color.White,
         navigationIcon = {
             Icon(

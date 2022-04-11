@@ -1,20 +1,7 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Daye" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/main</item>
-        <item name="colorPrimaryVariant">@color/main_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/second_light</item>
-        <item name="colorSecondaryVariant">@color/second</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-    </style>
-    
-    <style name="tabTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:letterSpacing">0</item>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Daye" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/main_light</item>
     </style>
 </resources>

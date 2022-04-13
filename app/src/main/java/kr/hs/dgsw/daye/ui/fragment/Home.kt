@@ -27,6 +27,8 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kr.hs.dgsw.daye.ui.fragment.home.Recommend
+import kr.hs.dgsw.daye.ui.fragment.home.Tea
 import kr.hs.dgsw.daye.ui.tab.HomeTab
 import kr.hs.dgsw.daye.ui.theme.MainColor
 import kr.hs.dgsw.daye.ui.theme.MainLightColor
@@ -78,6 +80,10 @@ fun Home(navController: NavController) {
                     .background(MaterialTheme.colors.onPrimary)
                     .fillMaxSize()
             ) {
+                when(tab) {
+                    HomeTab.Recommend -> Recommend()
+                    else -> Tea(tab.name)
+                }
             }
         }
     }

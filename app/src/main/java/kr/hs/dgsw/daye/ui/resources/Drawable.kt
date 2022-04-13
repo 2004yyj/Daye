@@ -9,4 +9,5 @@ sealed class Drawable(val resourceRes: Int) {
     object IcHome: Drawable(R.drawable.ic_home_selected)
     object IcPot: Drawable(R.drawable.ic_pot_selected)
     object IcUser: Drawable(R.drawable.ic_user_selected)
+    object IcStar: Drawable(R.drawable.ic_star)
 }

@@ -27,6 +27,7 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kr.hs.dgsw.daye.ui.tab.HomeTab
 import kr.hs.dgsw.daye.ui.theme.MainColor
 import kr.hs.dgsw.daye.ui.theme.MainLightColor
 

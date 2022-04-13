@@ -1,13 +1,17 @@
 package kr.hs.dgsw.daye.ui.fragment
 
-import androidx.compose.foundation.border
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.*
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.animateScrollBy
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ScrollableTabRow
+import androidx.compose.material.Tab
 import androidx.compose.material.TabRowDefaults.Indicator
 import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -19,18 +23,17 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kr.hs.dgsw.daye.ui.activity.Main
-import kr.hs.dgsw.daye.ui.resources.Array
+import kotlinx.coroutines.withContext
 import kr.hs.dgsw.daye.ui.theme.MainColor
 import kr.hs.dgsw.daye.ui.theme.MainLightColor
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Home(navController: NavController) {
-    val tabArray = stringArrayResource(id = Array.HomeTabArray.arrayRes)
+    val tabArray = HomeTab.values()
     val pagerState = rememberPagerState(initialPage = 0)
     val currentPage = pagerState.currentPage
     val coroutineScope = rememberCoroutineScope()
@@ -47,27 +50,34 @@ fun Home(navController: NavController) {
                 )
             }
         ) {
-            tabArray.forEachIndexed { index, text ->
+            tabArray.forEachIndexed { index, homeTab ->
                 Tab(
                     selected = currentPage == index,
                     selectedContentColor = MainColor,
                     unselectedContentColor = MainLightColor,
                     onClick = {
                         coroutineScope.launch {
-                            pagerState.scrollToPage(index)
+                            pagerState.animateScrollToPage(index)
                         }
                     },
                     text = {
-                        Text(text = text)
+                        Text(text = homeTab.title)
                     },
                 )
             }
         }
         HorizontalPager(
             state = pagerState,
-            count = tabArray.size
-        ) {
-            
+            count = tabArray.size,
+            modifier = Modifier.fillMaxSize()
+        ) { page ->
+            val tab = tabArray[page]
+            Column(
+                modifier = Modifier
+                    .background(MaterialTheme.colors.onPrimary)
+                    .fillMaxSize()
+            ) {
+            }
         }
     }
 }

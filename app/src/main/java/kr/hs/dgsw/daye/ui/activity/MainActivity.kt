@@ -55,8 +55,9 @@ fun Main() {
         modifier = Modifier.fillMaxSize(),
         topBar = { MainTopAppBar() },
         bottomBar = { MainBottomNavigation(items, navController) }
-    ) {
+    ) { innerPadding ->
         NavHost(
+            modifier = Modifier.padding(innerPadding),
             navController = navController,
             startDestination = Destinations.Home.route
         ) {
@@ -72,6 +73,7 @@ fun MainTopAppBar() {
     TopAppBar(
         title = {},
         modifier = Modifier,
+        elevation = 0.dp,
         backgroundColor = Color.White,
         navigationIcon = {
             Icon(

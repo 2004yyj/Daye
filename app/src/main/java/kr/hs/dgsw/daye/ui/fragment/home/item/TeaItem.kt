@@ -51,14 +51,6 @@ fun TeaItem() {
             fontWeight = FontWeight.Bold,
         )
 
-        Text(
-            text = "34,000",
-            color = UnselectedColor,
-            style = Typography.body2,
-            modifier = Modifier.padding(0.dp, 5.dp, 0.dp, 0.dp),
-            textDecoration = TextDecoration.LineThrough
-        )
-
         Row {
             Text(
                 text = "22%",
@@ -72,6 +64,13 @@ fun TeaItem() {
                 style = Typography.subtitle1,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(5.dp, 0.dp, 0.dp, 0.dp)
+            )
+
+            Text(
+                text = "34,000",
+                color = UnselectedColor,
+                style = Typography.caption,
+                textDecoration = TextDecoration.LineThrough
             )
         }
 

@@ -4,13 +4,16 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import kr.hs.dgsw.daye.ui.fragment.home.item.recommend.BannerList
-import kr.hs.dgsw.daye.ui.fragment.home.item.recommend.TeaList
+import kr.hs.dgsw.daye.ui.fragment.home.item.tea.BigTeaList
+import kr.hs.dgsw.daye.ui.fragment.home.item.tea.TeaList
 import kr.hs.dgsw.daye.ui.ui_model.HomeUiModel
 
 @Composable
 fun Recommend() {
     val list = arrayListOf(
         "Banner",
+        "SmallHorizontalTeaList",
+        "BigHorizontalTeaList",
         "SmallHorizontalTeaList",
         "BigHorizontalTeaList"
     ).map {
@@ -27,7 +30,7 @@ fun Recommend() {
             when(list[index]) {
                 is HomeUiModel.BannerUiModel -> BannerList()
                 is HomeUiModel.SmallHorizontalTeaListUiModel -> TeaList()
-                is HomeUiModel.BigHorizontalTeaListUiModel -> {}
+                is HomeUiModel.BigHorizontalTeaListUiModel -> BigTeaList()
             }
         }
     }

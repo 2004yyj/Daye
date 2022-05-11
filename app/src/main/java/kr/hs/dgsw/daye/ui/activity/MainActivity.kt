@@ -61,7 +61,7 @@ fun Main() {
             navController = navController,
             startDestination = Destinations.Home.route
         ) {
-            composable(Destinations.Home.route) { Home(navController) }
+            composable(Destinations.Home.route) { Home() }
             composable(Destinations.Store.route) { Store(navController) }
             composable(Destinations.MyPage.route) { MyPage(navController) }
         }

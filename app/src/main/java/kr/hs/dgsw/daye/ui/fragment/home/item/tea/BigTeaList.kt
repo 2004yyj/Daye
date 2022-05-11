@@ -1,4 +1,4 @@
-package kr.hs.dgsw.daye.ui.fragment.home.item.recommend
+package kr.hs.dgsw.daye.ui.fragment.home.item.tea
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,13 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kr.hs.dgsw.daye.ui.fragment.home.item.TeaItem
-import kr.hs.dgsw.daye.ui.theme.DayeTheme
+import kr.hs.dgsw.daye.ui.fragment.home.item.tea.tea_list.BigTeaItem
 import kr.hs.dgsw.daye.ui.theme.Typography
-import kotlin.math.max
 
 @Composable
-fun TeaList() {
+fun BigTeaList() {
     val list = (0..10).toList()
     Column(
         modifier = Modifier
@@ -33,8 +31,8 @@ fun TeaList() {
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             items(list.size) { index ->
-                Box(modifier = Modifier.height(500.dp)) {
-                    TeaItem()
+                Box {
+                    BigTeaItem()
                 }
             }
         }
@@ -43,6 +41,6 @@ fun TeaList() {
 
 @Preview
 @Composable
-fun TeaListPreview() {
-    TeaList()
+fun BigTeaListPreview() {
+    BigTeaList()
 }

@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kr.hs.dgsw.daye.ui.fragment.home.item.TeaItem
+import kr.hs.dgsw.daye.ui.fragment.home.item.tea.tea_list.BigTeaItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -29,7 +29,7 @@ fun Tea(name: String) {
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             items(list.size) { index ->
-                TeaItem()
+                BigTeaItem()
             }
         }
     }

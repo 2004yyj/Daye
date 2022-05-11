@@ -1,4 +1,4 @@
-package kr.hs.dgsw.daye.ui.fragment.home.item
+package kr.hs.dgsw.daye.ui.fragment.home.item.tea.tea_list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -15,12 +15,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kr.hs.dgsw.daye.R
+import kr.hs.dgsw.daye.ui.fragment.home.item.tea.tea_list.BigTeaItem
 import kr.hs.dgsw.daye.ui.resources.Drawable
 import kr.hs.dgsw.daye.ui.theme.LineColor
 import kr.hs.dgsw.daye.ui.theme.MainColor
@@ -34,7 +34,7 @@ fun TeaItem() {
             painter = painterResource(id = R.drawable.ic_launcher_background),
             contentDescription = null,
             modifier = Modifier
-                .fillMaxWidth()
+                .size(150.dp, 150.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .border(
                     width = 0.5.dp,
@@ -46,8 +46,9 @@ fun TeaItem() {
 
         Text(
             text = "아마드티 얼그레이 100티백",
-            modifier = Modifier.padding(0.dp, 10.dp, 0.dp, 0.dp),
-            style = Typography.subtitle1,
+            modifier = Modifier.padding(0.dp, 10.dp, 0.dp, 0.dp)
+                .width(150.dp),
+            style = Typography.subtitle2,
             fontWeight = FontWeight.Bold,
         )
 
@@ -104,6 +105,6 @@ fun TeaItemPreview() {
     Surface(
         modifier = Modifier.background(Color.White)
     ) {
-        TeaItem()
+        BigTeaItem()
     }
 }
